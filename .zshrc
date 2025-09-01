@@ -33,14 +33,18 @@ plugins=(
   vi-mode
   z 
   asdf
-  zsh-alias-finder
-  fast-syntax-highlighting
+  alias-finder
+  zsh-syntax-highlighting
   zsh-history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# ASDF completion
+. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DIR}/completions $fpath)
 
 eval "$(starship init zsh)"
 
